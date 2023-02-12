@@ -1,4 +1,5 @@
 <?php
+include_once('functions.inc.php');
     if(isset($_POST['submit'])){
         $pesel = $_POST['pesel'];
         if(wrongInput($pesel) !== false){
