@@ -23,12 +23,12 @@ if(isset($_POST['submit']))
         exit();
     }
 }
-if($result = true){
-    //jesli wszystko dobrze zostało ogarniete, to przeniesie cie tutaj
-   ?>
-   <!DOCTYPE html>
-   <html lang="en">
-   <head>
+if($result = true)
+//jesli wszystko dobrze zostało ogarniete, to przeniesie cie tutaj
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,13 +41,11 @@ if($result = true){
             text-align: center;
         }
     </style>
-   </head>
-   <body>
+</head>
+<body>
     <?php
         echo "<p class='first'>To jest dobry pesel : ".$pesel."</p><br>";
-        
+        echo $_SESSION['dzien'];
     ?>
-   </body>
-   </html>
-   <?php
-};
+</body>
+</html>

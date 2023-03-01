@@ -67,9 +67,14 @@ function data($pesel){
 
     // Przekształcenie "miesiąca" z PESEL na prawidłowy format
     $miesiac = str_pad($miesiac % 20, 2, '0', STR_PAD_LEFT);
-}
-function data_sprawdzenie(data $pesel){
-    $result = false;
+
+    if ($dzien < 1 || $dzien > cal_days_in_month(CAL_GREGORIAN, $miesiac, $rok)) {
+        $result = true;
+    }else{
+        $result = false;
+    }
+
+
     if ($rok < 1800 || $rok > 2299) {
         $result = true;
     }else{
@@ -82,9 +87,8 @@ function data_sprawdzenie(data $pesel){
         $result = false;
     }
     
-    if ($dzien < 1 || $dzien > cal_days_in_month(CAL_GREGORIAN, $miesiac, $rok)) {
-        $result = true;
-    }else{
-        $result = false;
-    }
+    $_SESSION['dzien'] = $dzien;
+    $_SESSION['miesiac'] = $miesiac;
+    $_SESSION['rok'] = $rok;
+return $result;
 }
