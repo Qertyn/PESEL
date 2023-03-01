@@ -16,18 +16,18 @@
     </style>
 </head>
 <body>
-    <form class="box" action="includes/submiter.inc.php" method="POST"> <!-- //action do pliku subliter.inc.php -->
+    <form class="box" action="includes/submiter.inc.php" method="POST"> <!--action do pliku subliter.inc.php-->
         <h1>PESEL CHECKER</h1>
 
-        <!-- name pesel zczytuje wartość podaną przez usera-->
+        <!--name 'pesel' zczytuje wartość podaną przez usera-->
         <input type="text" placeholder="Wpisz tu swój pesel" name="pesel"> 
 
-        <!-- name submit by sprawdzić czy funkcja została wywołana-->
+        <!--name 'submit' by sprawdzić czy funkcja została wywołana-->
         <input type="submit" name="submit" value="Sprawdź pesel"> 
     </form>
 
     <?php
-    /// error checker
+    // error checker
         if(isset($_GET["error"])){   
 
             ///jezeli funkcja wrongPesel wykazała błąd pokaże się echo poniżej
@@ -43,7 +43,7 @@
             }
         }
     ?>
-    <br><br>
+    <br>
     <a href="index.php"><input type="button" value="Likwidacja błędów"></a>
 </body>
 </html>

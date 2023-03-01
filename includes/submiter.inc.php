@@ -22,5 +22,7 @@ if(isset($_POST['submit']))
         exit();
     }
 }
-//Jesli wszystko zadziała poprawnie (nie wywali błędu) to tutaj jest wypisanie poprawnego peselu
-echo "<p style='font-size:30px;font-weight:800;text-align:center;'>To jest dobry pesel : ".$pesel."</p>";
+if($result = true){
+    //jesli wszystko dobrze zostało ogarniete, to przeniesie cie tutaj
+    echo "<p>Ten Pesel jest poprawny : ".$pesel."</p>";
+};
