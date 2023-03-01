@@ -30,16 +30,16 @@
     /// error checker
         if(isset($_GET["error"])){   
 
-            ///jezeli funkcja wrongInput wykazała błąd pokaże się echo poniżej
-            if($_GET["error"] = "wrongInput"){   
-                echo '<p class="r">Wypełnij pole PESEL!</p>';
+            ///jezeli funkcja wrongPesel wykazała błąd pokaże się echo poniżej
+            if($_GET["error"] = "wrongPesel"){ 
+                echo '<p class="r">Nieprawidłowy PESEL!</p>';
             }
             else if($_GET["error"] = "wrongLength"){
                 echo '<p class="r">Nieprawidłowa długość numeru PESEL!</p>';
             }
             ///jezeli funkcja wrongPesel wykazała błąd pokaże się echo poniżej
-            else if($_GET["error"] = "wrongPesel"){ 
-                echo '<p class="r">Nieprawidłowy PESEL!</p>';
+            else if($_GET["error"] = "wrongInput"){   
+                echo '<p class="r">Wypełnij pole PESEL!</p>';
             }
         }
     ?>

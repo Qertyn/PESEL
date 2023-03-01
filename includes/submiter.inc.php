@@ -17,3 +17,4 @@ if(isset($_POST['submit']))
         exit();
     }
 }
+echo "<p style='font-size:30px;font-weight:800;text-align:center;'>To jest dobry pesel : ".$pesel."</p>";

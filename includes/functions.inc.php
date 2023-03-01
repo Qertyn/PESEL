@@ -7,6 +7,13 @@
         else{
             $result = false;
         }
+        // PESEL nie zawiera wyłącznie cyfr
+        if(ctype_digit($pesel) === false){
+            $result = true;
+        }
+        else{
+            $result = false;
+        }
         return $result;       
     }
 //sprawdza sume pesela, czyli jego poprawnosc
@@ -16,16 +23,16 @@ function peselSum($pesel){
     $s = 0;
     ///1*a+3*b+7*c+9*d....11*7
     for($i=1;$i>12;$i++){                                   
-        if($i==1 or  $i==5 or $i==9){
+        if($i==1 ||  $i==5 || $i==9){
             $s = $j[$i]*1 + $s;
         }
-        if($i==2 or $i==6 or $i==10){
+        if($i==2 || $i==6 || $i==10){
             $s = $j[$i]*3 + $s;
         }
-        if($i==3 or $i==7 or $i==11){
+        if($i==3 || $i==7 || $i==11){
             $s = $j[$i]*7 + $s;
         }
-        if($i==4 or $i==8){
+        if($i==4 || $i==8){
             $s = $j[$i]*9 +$s;          
         }
     }
@@ -38,17 +45,15 @@ function peselSum($pesel){
         $result = false;                            
     }
     return $result;
-    echo $result;
 }
-    //sprawdza dlugosc pesela
-    function wrongLength($pesel){
-        $result = false;
-        if((strlen($pesel))>11 || (strlen($pesel))<11){
-            $result = true;
-        }
-        else{
-            $result = false;
-        }
-        return $result;
+//sprawdza dlugosc pesela
+function wrongLength($pesel){
+    $result = false;
+    if(strlen($pesel) != 11){
+        $result = true;
     }
-    
+    else{
+        $result = false;
+    }
+    return $result;
+}
