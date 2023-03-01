@@ -1,4 +1,5 @@
 <?php
+
 function wrongInput($pesel){
     $result = false;
     if(empty($pesel)){
@@ -27,7 +28,7 @@ function wrongLength($pesel){
     }
     return $result;
 }
-//sprawdza sume pesela, czyli jego poprawnosc
+//SUMA KONTROLNA - sprawdza sume pesela, czyli jego poprawnosc
 function wrongPesel($pesel){
     $result = false;
     // Rozbicie cyfr na elementy tablicy
