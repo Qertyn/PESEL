@@ -10,6 +10,7 @@
         return $result;
         
     }
+    //sprawdza dlugosc pesela
     function wrongLength($pesel){
         $result = false;
         if((strlen($pesel))>11 || (strlen($pesel))<11){
@@ -20,6 +21,7 @@
         }
         return $result;
     }
+    //sprawdza sume pesela, czyli jego poprawnosc
     function peselSum($pesel){
         $result = false;
         $j = str_split($pesel);
