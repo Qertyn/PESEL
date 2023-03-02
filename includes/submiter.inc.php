@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
         exit();
     }
 }
-if($result = true)
+if($result == true)
 //jesli wszystko dobrze zostało ogarniete, to przeniesie cie tutaj
 ?>
 <!DOCTYPE html>

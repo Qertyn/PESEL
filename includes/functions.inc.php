@@ -87,8 +87,5 @@ function data($pesel){
         $result = false;
     }
     
-    $_SESSION['dzien'] = $dzien;
-    $_SESSION['miesiac'] = $miesiac;
-    $_SESSION['rok'] = $rok;
 return $result;
 }
