@@ -1,11 +1,10 @@
 <?php
 session_start();
-include_once('functions.inc.php');
+include('functions.inc.php');
 
 if(isset($_POST['submit']))
 {
     $pesel = $_POST['pesel'];
-    require_once 'functions.inc.php';
 
     //sprawdza sume kontrolna
     if(wrongPesel($pesel) == false){
@@ -23,7 +22,6 @@ if(isset($_POST['submit']))
         exit();
     }
 }
-if($result == true)
 //jesli wszystko dobrze zostało ogarniete, to przeniesie cie tutaj
 ?>
 <!DOCTYPE html>
@@ -45,7 +43,6 @@ if($result == true)
 <body>
     <?php
         echo "<p class='first'>To jest dobry pesel : ".$pesel."</p><br>";
-        
     ?>
 </body>
 </html>
