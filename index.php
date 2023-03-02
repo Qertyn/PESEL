@@ -13,6 +13,9 @@
         p.r{
             color: red;
         }
+        body{
+            text-align:center;
+        }
     </style>
 </head>
 <body>
