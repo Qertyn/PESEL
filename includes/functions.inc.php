@@ -73,8 +73,7 @@ function data($pesel){
     }else{
         $result = false;
     }
-
-
+    //sprawdza poprawnosc daty
     if ($rok < 1800 || $rok > 2299) {
         $result = true;
     }else{
@@ -86,9 +85,4 @@ function data($pesel){
     }else{
         $result = false;
     }
-    
-    $_SESSION['dzien'] = $dzien;
-    $_SESSION['miesiac'] = $miesiac;
-    $_SESSION['rok'] = $rok;
-return $result;
 }
