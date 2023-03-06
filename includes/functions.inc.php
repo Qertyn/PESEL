@@ -86,3 +86,4 @@ function data($pesel){
         $result = false;
     }
 }
+?>

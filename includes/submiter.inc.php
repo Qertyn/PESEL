@@ -43,8 +43,6 @@ if(isset($_POST['submit']))
 <body>
     <?php
         echo "<p class='first'>To jest dobry pesel : ".$pesel."</p><br>";
-        require_once 'functions.inc.php';
-
     ?>
 </body>
 </html>
