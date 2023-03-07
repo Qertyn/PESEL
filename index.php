@@ -59,7 +59,6 @@
         <!--name 'submit' by sprawdzić czy funkcja została wywołana-->
         <input type="submit" name="submit" value="Sprawdź pesel"> 
     </form>
-
     <?php
     // error checker
         if(isset($_GET["error"])){   
@@ -79,6 +78,7 @@
     ?>
     <br>
     <a href="index.php"><input type="button" value="Likwidacja błędów" ></a>
+    <a href="testowa 2.png"><input type="button" value="Zobacz kod" ></a>
     </div>
 </body>
 </html>
