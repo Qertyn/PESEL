@@ -55,35 +55,15 @@ function data($pesel){
     $miesiac = substr($pesel, 2, 2);
     $dzien = substr($pesel, 4, 2);
 
-    // Pierwsza cyfra z miesiąca, między 0 i 9
-    $wiek = substr($pesel, 2, 1);
-    $wiek += 2;// Dodajemy 2, bo tak
-    $wiek %= 10;// Reszta z dzielenia przez 10, tak trzeba
-    $wiek = round($wiek / 2, 0, PHP_ROUND_HALF_DOWN);// Dzielimy na 2 i zaokrąglamy w dół, wiec ma to sens
-    $wiek += 18;// Dodajemy 18, bo tak było napisane w obliczeniach
+    //sprawdzamy co nam pobiera
+    $data = sprintf("%s %s %s", $rok, $miesiac, $dzien);
 
-    // Pełny rok
-    $rok = $wiek.$rok;
+    return $data;
 
-    // Przekształcenie "miesiąca" z PESEL na prawidłowy format
-    $miesiac = str_pad($miesiac % 20, 2, '0', STR_PAD_LEFT);
-
-    if ($dzien < 1 || $dzien > cal_days_in_month(CAL_GREGORIAN, $miesiac, $rok)) {
-        $result = true;
-    }else{
-        $result = false;
-    }
-    //sprawdza poprawnosc daty
-    if ($rok < 1800 || $rok > 2299) {
-        $result = true;
-    }else{
-        $result = false;
-    }
-
-    if ($miesiac < 1 || $miesiac > 12) {
-        $result = true;
-    }else{
-        $result = false;
-    }
 }
+/* 1. pobranie 6 cyfr
+ * 2. Przesunięcie 2 z  nich
+ * 04 28 13
+ * 2004 08 13
+ */
 ?>
