@@ -51,19 +51,22 @@ function wrongPesel($pesel){
 return $result;
 }
 function data($pesel){
-    $rok = substr($pesel, 0, 2);
-    $miesiac = substr($pesel, 2, 2);
-    $miesiac = str_pad($miesiac % 20, 2, '0', STR_PAD_LEFT);
-    $dzien = substr($pesel, 4, 2);
-
-    //sprawdzamy co nam pobiera
-    $data = sprintf("rok :%s | miesiac: %s | dzien: %s", $rok, $miesiac, $dzien);
-
-    return $data;
+    $dzien = substr($pesel, 4,2);
+    $rok = "";
+    if(substr($pesel, 2 ,2) > 13){
+        $miesiac = (substr($pesel, 2, 2)) - 20;
+        $rok = ("20".substr($pesel, 0, 2));
+        if($miesiac<10) $miesiac = "0" . $miesiac;
+        return $rok." ".$miesiac." ".$dzien;
+    }else {
+        $miesiac = substr($pesel, 2 ,2);
+        $rok = ("19".substr($pesel, 0, 2));
+        return $rok." ".$miesiac." ".$dzien;
+    }
 }
 function plec($pesel){
-    $ManOrWoman = substr($pesel, 8, 3);
-    if($ManOrWoman%2 == 0){
+    $ManOrWoman = substr($pesel, 9, 1);
+    if($ManOrWoman%2 == 1){
         return "Mężczyzna";
     }else{
         return "Kobieta";
@@ -73,5 +76,7 @@ function plec($pesel){
  * 2. Przesunięcie 2 z  nich
  * 04 28 13
  * 2004 08 13
+ * 25 06 13
+ * 2005 06 13
+ *
  */
-?>
