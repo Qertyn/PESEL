@@ -56,7 +56,7 @@ function data($pesel){
     $dzien = substr($pesel, 4, 2);
 
     //sprawdzamy co nam pobiera
-    $data = sprintf("%s %s %s", $rok, $miesiac, $dzien);
+    $data = sprintf("rok: %s | miesiac: %s | dzien: %s", $rok, $miesiac, $dzien);
 
     return $data;
 
