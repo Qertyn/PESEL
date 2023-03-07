@@ -24,7 +24,7 @@
             width:40%;
             margin-top: 50px;
             margin-left:30%;
-            height:200px;
+            height:300px;
             border-radius:15px;
             position: absolute;
             box-shadow: 15px 15px 20px black;
