@@ -30,19 +30,19 @@
     {
         $pesel = $_POST['pesel'];
     
-        //sprawdza sume kontrolna
-        if(!wrongPesel($pesel)){
-            header('location: ../index.php?error=wrongPesel');
-            exit();
-        }
         //sprawdza wprowadzone cyfry
-        else if(wrongInput($pesel) !== false){
+        if(wrongInput($pesel) !== false){
             header('location: ../index.php?error=wrongInput');
             exit();
         }
         //sprawdza długość peselu
         else if(wrongLength($pesel) !== false){
             header('location: ../index.php?error=wrongLength');
+            exit();
+        }
+        //sprawdza sume kontrolna
+        else if(wrongPesel($pesel)){
+            header('location: ../index.php?error=wrongPesel');
             exit();
         }
         echo "<br><br><br><div class='main_show' 

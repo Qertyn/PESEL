@@ -2,14 +2,7 @@
 
 function wrongInput($pesel){
     $result = false;
-    if(empty($pesel)){
-        $result = true;
-    }
-    else{
-        $result = false;
-    }
-    // PESEL nie zawiera wyłącznie cyfr
-    if(ctype_digit($pesel) === false){
+    if(empty($pesel) || ctype_digit($pesel) === false){
         $result = true;
     }
     else{
@@ -29,27 +22,28 @@ function wrongLength($pesel){
     return $result;
 }
 //SUMA KONTROLNA - sprawdza sume pesela, czyli jego poprawnosc
-function wrongPesel($pesel){
-    $result = false;
-    // Rozbicie cyfr na elementy tablicy
-    $cyfry_pesel = str_split($pesel);
+
     // Waga kolejnych cyfr do obliczenia sumy kontrolnej
-    $wagi = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
-
-    $checksum = array_reduce(array_keys($cyfry_pesel), 
-    function ($bierz, $id) use ($wagi, $cyfry_pesel) 
-        {
-            return $bierz + $wagi[$id] * $cyfry_pesel[$id];
-        }
-    );
-
-    if ($checksum % 10 !== 0) {
-        $result = false;
-    }else{
-        $result = true;
+function wrongPesel($pesel){
+    
+    $Wagi = array(1, 3, 7, 9, 1, 3, 7, 9, 1, 3); // tablica z odpowiednimi wagami
+    $Sum = 0;
+    
+    for ($i = 0; $i < 10; $i++) {
+        $Sum += $Wagi[$i] * $pesel[$i]; //mnożymy każdy ze znaków dla 10 pierwszych cyfr przez wagę i sumujemy wszystko
     }
-return $result;
+    //obliczamy sumę kontrolną i porównujemy ją z ostatnią cyfrą.
+    $int = 10 - $Sum % 10; 
+    $suma_k = ($int == 10)?0:$int;
+    
+    if ($suma_k == $pesel[10]){
+        $result =  true;
+    }else{
+        $result = false;
+    }
+    
 }
+
 function data($pesel){
     $dzien = substr($pesel, 4,2);
     $rok = "";
