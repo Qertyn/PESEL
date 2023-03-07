@@ -80,3 +80,4 @@ function plec($pesel){
  * 2005 06 13
  *
  */
+?>

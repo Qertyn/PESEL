@@ -16,6 +16,7 @@
             border: solid 2px #B22813;
             border-radius:6px;
             background-color:#D57667;
+            padding: 15px;
         }
         a:hover{
             background-color:#E2AFA7;
@@ -55,7 +56,7 @@
     ?>
 </head>
 <body>
-    <p style="text-align:center;">
+    <p style="text-align:center;"><br>
         <a href="../index.php" style="text-decoration:none;font-size:25px;">Powrot na strone główną</a>
     </p>
 </body>
