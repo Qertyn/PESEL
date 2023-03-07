@@ -3,7 +3,8 @@
 ?>
 <html>
 <head>
-    <link rel="stylesheet" src="submiter.css">
+    <link rel="icon" href="../pesel.png">
+    <title>PESEL Checker - wynik</title>
     <?php
     include('functions.inc.php');
     
@@ -26,11 +27,18 @@
             header('location: ../index.php?error=wrongLength');
             exit();
         }
-        echo "<div class='show' style='text-align:center;font-size:100px;'>".data($pesel)."</div>";
+        echo "<br><br><br>";
+        echo "<div class='show' style='text-align:center;font-size:40px;'>Pesel jest Prawidłowy</div>";
+        echo "<br><br><br>";
+        echo "<div class='show' style='text-align:center;font-size:30px;'>".data($pesel)."</div>";
+        echo "<br>";
+        echo "<div class='show' style='text-align:center;font-size:30px;'>".plec($pesel)."</div>";
     }
     ?>
 </head>
 <body>
-    <a href="../index.php" style="text-decoration:none;text-align:center;font-size:40px;">Powrot na strone główną</a>
+    <p style="text-align:center;">
+        <a href="../index.php" style="text-decoration:none;font-size:25px;">Powrot na strone główną</a>
+    </p>
 </body>
 </html>

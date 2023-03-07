@@ -53,13 +53,21 @@ return $result;
 function data($pesel){
     $rok = substr($pesel, 0, 2);
     $miesiac = substr($pesel, 2, 2);
+    $miesiac = str_pad($miesiac % 20, 2, '0', STR_PAD_LEFT);
     $dzien = substr($pesel, 4, 2);
 
     //sprawdzamy co nam pobiera
-    $data = sprintf("rok: %s | miesiac: %s | dzien: %s", $rok, $miesiac, $dzien);
+    $data = sprintf("rok :%s | miesiac: %s | dzien: %s", $rok, $miesiac, $dzien);
 
     return $data;
-
+}
+function plec($pesel){
+    $ManOrWoman = substr($pesel, 8, 3);
+    if($ManOrWoman%2 == 0){
+        return "Mężczyzna";
+    }else{
+        return "Kobieta";
+    }
 }
 /* 1. pobranie 6 cyfr
  * 2. Przesunięcie 2 z  nich
