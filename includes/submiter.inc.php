@@ -3,6 +3,24 @@
 ?>
 <html>
 <head>
+    <style>
+
+         body{
+            text-align:center;
+            font-family:sans-serif;
+            color:#B22813 ;
+            background-color:#FFEFE5;
+        }
+        a{
+            color:#B22813 ;
+            border: solid 2px #B22813;
+            border-radius:6px;
+            background-color:#D57667;
+        }
+        a:hover{
+            background-color:#E2AFA7;
+        }
+    </style>
     <link rel="icon" href="../pesel.png">
     <title>PESEL Checker - wynik</title>
     <?php

@@ -15,15 +15,49 @@
         }
         body{
             text-align:center;
+            font-family:sans-serif;
+            color:#B22813 ;
+            background-color:#FFEFE5;
+        
+        }
+        body:hover{
+            background-image:url("testowa 2.png");
+        }
+        #bonus_bobra{
+            background-color:#FFA469 ;
+            width:40%;
+            margin-left:30%;
+            height:200px;
+            border-radius:15px;
+           
+
+        }
+        input[type="button"],[type="submit"]{
+            background-color:#FF4225;
+            border:none;
+            border-radius:4px;
+            width:150px;
+            height:40px;
+            color:#8D1E0D;
+        }
+        input[type="text"]{
+            background-color:#FF6851;
+            border:none;
+            border-radius:4px;
+            height: 40px;
+        }
+        input[type="button"]:hover,[type="submit"]:hover{
+            background-color:#FF7D68;
         }
     </style>
 </head>
 <body>
+    <div id= "bonus_bobra">
     <form class="box" action="includes/submiter.inc.php" method="POST"> <!--action do pliku subliter.inc.php-->
         <h1>PESEL CHECKER</h1>
 
         <!--name 'pesel' zczytuje wartość podaną przez usera-->
-        <input type="text" placeholder="Wpisz tu swój pesel" name="pesel"> 
+        <input type="text" placeholder="Wpisz tu swój pesel" name="pesel"  > 
 
         <!--name 'submit' by sprawdzić czy funkcja została wywołana-->
         <input type="submit" name="submit" value="Sprawdź pesel"> 
@@ -47,6 +81,7 @@
         }
     ?>
     <br>
-    <a href="index.php"><input type="button" value="Likwidacja błędów"></a>
+    <a href="index.php"><input type="button" value="Likwidacja błędów" ></a>
+    </div>
 </body>
 </html>
