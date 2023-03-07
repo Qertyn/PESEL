@@ -79,10 +79,11 @@ function data($pesel){
     }else{
         $result = false;
     }
-    
+
     if ($miesiac < 1 || $miesiac > 12) {
         $result = true;
     }else{
         $result = false;
     }
 }
+?>
