@@ -61,7 +61,7 @@ function data($pesel){
     }else {
         $miesiac = substr($pesel, 2 ,2);
         $rok = ("19".substr($pesel, 0, 2));
-        return $rok." ".$miesiac." ".$dzien;
+        return $rok."-".$miesiac."-".$dzien;
     }
 }
 function plec($pesel){
@@ -72,12 +72,4 @@ function plec($pesel){
         return "Kobieta";
     }
 }
-/* 1. pobranie 6 cyfr
- * 2. Przesunięcie 2 z  nich
- * 04 28 13
- * 2004 08 13
- * 25 06 13
- * 2005 06 13
- *
- */
 ?>

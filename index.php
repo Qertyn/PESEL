@@ -12,6 +12,7 @@
     <style>
         p.r{
             color: red;
+            margin-bottom: -1px;
         }
         body{
             text-align:center;
@@ -24,7 +25,7 @@
             width:40%;
             margin-top: 50px;
             margin-left:30%;
-            height:300px;
+            height:250px;
             border-radius:15px;
             position: absolute;
             box-shadow: 15px 15px 20px black;
