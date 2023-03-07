@@ -18,33 +18,30 @@
             font-family:sans-serif;
             color:#B22813 ;
             background-color:#FFEFE5;
-        
-        }
-        body:hover{
-            background-image:url("testowa 2.png");
         }
         #bonus_bobra{
-            background-color:#FFA469 ;
+            background-color:#fcbb90;
             width:40%;
+            margin-top: 50px;
             margin-left:30%;
             height:200px;
             border-radius:15px;
-           
-
+            position: absolute;
+            box-shadow: 15px 15px 20px black;
         }
         input[type="button"],[type="submit"]{
             background-color:#FF4225;
-            border:none;
             border-radius:4px;
             width:150px;
             height:40px;
             color:#8D1E0D;
+            border: solid 2px #B22813;
         }
         input[type="text"]{
             background-color:#FF6851;
-            border:none;
+            border: solid 2px #B22813;
             border-radius:4px;
-            height: 40px;
+            height: 35px;
         }
         input[type="button"]:hover,[type="submit"]:hover{
             background-color:#FF7D68;
