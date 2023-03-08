@@ -51,27 +51,21 @@
 </head>
 <body>
     <div id= "bonus_bobra">
-    <form class="box" action="includes/submiter.inc.php" method="POST"> <!--action do pliku subliter.inc.php-->
+    <form class="box" action="includes/submiter.inc.php" method="POST">
         <h1>PESEL CHECKER</h1>
 
-        <!--name 'pesel' zczytuje wartość podaną przez usera-->
-        <input type="text" placeholder="Wpisz tu swój pesel" name="pesel"  > 
+        <label>
+            <input type="text" placeholder="Wpisz tu swój pesel" name="pesel"  >
+        </label>
 
-        <!--name 'submit' by sprawdzić czy funkcja została wywołana-->
         <input type="submit" name="submit" value="Sprawdź pesel"> 
     </form>
     <?php
     // error checker
-        if(isset($_GET["error"])){   
-
-            ///jezeli funkcja wrongPesel wykazała błąd pokaże się echo poniżej
+        if(isset($_GET["error"])){
             if($_GET["error"] = "wrongPesel"){ 
                 echo '<p class="r">Nieprawidłowy PESEL!</p>';
             }
-            else if($_GET["error"] = "wrongLength"){
-                echo '<p class="r">Nieprawidłowa długość numeru PESEL!</p>';
-            }
-            ///jezeli funkcja wrongPesel wykazała błąd pokaże się echo poniżej
             else if($_GET["error"] = "wrongInput"){   
                 echo '<p class="r">Wypełnij pole PESEL!</p>';
             }

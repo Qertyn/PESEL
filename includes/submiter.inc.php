@@ -1,7 +1,7 @@
 <?php
     session_start();
 ?>
-<html>
+<html lang="pl-PL">
 <head>
     <style>
 
@@ -29,18 +29,15 @@
     if(isset($_POST['submit']))
     {
         $pesel = $_POST['pesel'];
-    
-        //sprawdza wprowadzone cyfry
+
         if(wrongInput($pesel) !== false){
             header('location: ../index.php?error=wrongInput');
             exit();
         }
-        //sprawdza długość peselu
         else if(wrongLength($pesel) !== false){
             header('location: ../index.php?error=wrongLength');
             exit();
         }
-        //sprawdza sume kontrolna
         else if(wrongPesel($pesel)){
             header('location: ../index.php?error=wrongPesel');
             exit();
