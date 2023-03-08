@@ -66,7 +66,7 @@
             color:#8D1E0D;
             border: solid 2px #B22813;
             '>Powrot na strone główną</a></div>";
-    }
+    }else header('location ../index.php');
     ?>
 </head>
 <body>
